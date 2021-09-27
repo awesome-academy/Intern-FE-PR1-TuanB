@@ -1,0 +1,176 @@
+.footer {
+    background: $bg-black;
+    margin-top: 55px;
+
+    &-top {
+        border-bottom: 1px solid $border-black-fading;
+        padding: 30px 0;
+
+        &__title {
+            @include text($font-size-l, $text-main-fading);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-right: 35px;
+
+            @include responsive(mobile) {
+                @include text($font-size-l, $main-color);
+                padding-right: 0;
+                margin: 30px 0 10px 0;
+            }
+
+            @include responsive(tablet) {
+                padding-right: 0;
+            }
+        }
+
+        i {
+            @include text($font-size-xl, $text-main-fading);
+            padding-right: 25px;
+
+            @include responsive(mobile) {
+                @include text($font-size-4xl, $text-white);
+            }
+        }
+
+        &__form {
+            input {
+                background: white;
+                width: 80%;
+                height: 45px;
+            }
+
+            .icon {
+                position: absolute;
+                width: 20%;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                background: $bg-main-hover-item;
+
+                i {
+                    padding: 0;
+                    color: $bg-white;
+                }
+            }
+        }
+    }
+
+    &-mid {
+        margin-top: 55px;
+
+        @include responsive(mobile) {
+            margin-top: 15px;
+        }
+
+        @include responsive(tablet) {
+            margin-top: 15px;
+        }
+
+        &__img {
+            display: inline-block;
+        }
+
+        p {
+            @include text($font-size-m, $text-white-fading);
+            margin: 20px 0;
+            padding-right: 30%;
+
+            @include responsive(mobile) {
+                padding: 0;
+                margin: 20px 0 0 0;
+            }
+
+            @include responsive(tablet) {
+                padding: 0;
+            }
+        }
+
+        &__media {
+            display: block;
+
+            @include responsive(mobile) {
+                display: none;
+            }
+
+            i {
+                @include text($font-size-3xl, $main-color);
+                width: 30px;
+            }
+
+            span {
+                @include text($font-size-m, $text-white-fading);
+            }
+        }
+
+        &__left {
+            @include text($font-size-l, $main-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 25px 0;
+
+            @include responsive(mobile) {
+                margin: 40px 0 20px 0;
+            }
+        }
+
+        &__info {
+            display: block;
+            margin: 12px 0;
+
+            i {
+                @include text($font-size-s, $text-white-fading);
+                padding-right: 5px;
+            }
+
+            span {
+                @include text($font-size-s, $text-white-fading);
+            }
+        }
+    }
+
+    &-bottom {
+        margin-top: 55px;
+        padding: 19px 0;
+
+        @include responsive(mobile) {
+            display: none;
+        }
+
+        @include responsive(tablet) {
+            margin-top: 10px;
+            padding: 10px 0;
+        }
+
+        .list-item {
+            .item {
+                @include text($font-size-m, $text-white-fading);
+                display: inline-block;
+                margin-right: 20px;
+
+                &-icon {
+                    font-size: $font-size-2xl;
+                }
+            }
+        }
+    }
+
+    &-copy {
+        text-align: center;
+        background: $bg-black-fading;
+        padding: 13px 0;
+
+        @include responsive(mobile) {
+            margin-top: 15px;
+            padding: 10px 0;
+        }
+
+        .copy-item {
+            @include text($font-size-l, $text-white);
+            margin: 0;
+
+            i {
+                margin-left: 2px;
+            }
+        }
+    }
+}
