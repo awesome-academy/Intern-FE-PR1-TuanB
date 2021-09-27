@@ -1,0 +1,78 @@
+- const time = "Open time: 8:00 - 18:00   Monday - Sunday"
+- const phoneNumber = "Hỗ trợ :  (04) 6674 2332 - (04) 3786 8904"
+- const medias = ["fab fa-facebook-f", "fab fa-twitter", "fab fa-tumblr", "fab fa-vimeo-v"]
+- const author = [{title: "Đăng nhập", icon: "fas fa-user"}, {title: "Đăng ký", icon: "fas fa-user-plus"}]
+- const navbar = [{title: "TRANG CHỦ", isActive: true}, {title: "GIỚI THIỆU"}, {title: "SẢN PHẨM", icon: "fas fa-caret-down"}, {title: "SẢN PHẨM MỚI", icon: "fas fa-caret-down"}, {title: "TIN TỨC"}, {title: "LIÊN HỆ"}]
+- const cart = [{quantity: 0, title: "Sản phẩm", icon: "fas fa-cart-plus"}]
+- const carousel = [{isActive: true, img: "../../images/slide.jpg", alt: "slide"}, {img: "../../images/slide.jpg", alt: "slide"}, {img: "../../images/slide.jpg", alt: "slide"}]
+
+header.header
+    .header-notify
+        .container
+            .row
+                .col-9
+                    i.far.fa-clock.header-notify__clock
+                    span.header-notify__time= time
+                    each item in medias
+                        a(href="#").header-notify__media
+                            i(class= item)
+                .col-3.d-flex.justify-content-end.align-items-center
+                    each item in author
+                        a(href="#").header-notify__author
+                            i(class= item.icon)
+                            span= item.title
+    .header-main
+        .container.h-100
+            .row.h-100.align-items-center
+                .col-12.col-lg-6.col-xl-6
+                    a(href="#").header-main__logo
+                        img(src="../../images/logo.png", alt="logo")
+                .col-4.d-none.d-sm-block
+                    i.fas.fa-phone.icon-phone
+                    span.header-main__phone= phoneNumber
+                    form.header-main__input
+                        input(type="text" placeholder="Tìm kiếm...")
+                        a(href="#").search-icon
+                            i.fas.fa-search
+                .col-2.d-none.d-sm-block
+                    .header-cart
+                        each item in cart
+                            i(class= item.icon).header-cart__icon
+                            span.header-cart__quantity #{item.quantity} #{item.title}
+    .header-nav
+        .container.h-100
+            nav.navbar.navbar-expand-lg.navbar-light.p-0.h-100
+                a.header-nav__icon(href='#')
+                    i.fas.fa-bars
+                .d-block.d-sm-none
+                    a(href="#").header-nav__icon
+                        i.fas.fa-search
+                    a(href="#").header-nav__icon
+                        i.fas.fa-cart-plus
+                #navbarSupportedContent.collapse.navbar-collapse.h-100
+                    ul.navbar-nav.mr-auto.h-100
+                        each item in navbar
+                            if item.isActive
+                                li.nav-item.active-nav
+                                    a.nav-link(href='#')= item.title
+                                        i(class = item.icon)
+                            else
+                                li.nav-item
+                                    a.nav-link(href='#')= item.title
+                                        i(class = item.icon)
+            
+    .header-slide
+        #slides.carousel.slide(data-ride='carousel')
+            ul.carousel-indicators
+                li.active(data-target='#slides' data-slide-to='0')
+                li(data-target='#slides' data-slide-to='1')
+                li(data-target='#slides' data-slide-to='2')
+            .carousel-inner
+                each item in carousel
+                    if item.isActive
+                        .carousel-item.active
+                            img(src= item.img, alt= item.alt)
+                    else
+                        .carousel-item
+                            img(src= item.img, alt= item.alt)
+

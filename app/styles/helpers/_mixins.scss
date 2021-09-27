@@ -1,0 +1,23 @@
+@mixin text($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+@mixin d-flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin responsive($device) {
+    @if $device == mobile {
+        @media (max-width: 740px) {
+            @content;
+        }
+    } @else if $device == tablet {
+        @media (min-width: 741px) and (max-width: 1023px) {
+            @content;
+        }
+    }
+}

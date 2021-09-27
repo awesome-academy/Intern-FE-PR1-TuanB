@@ -1,0 +1,24 @@
+a {
+    text-decoration: none !important;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    all: unset;
+}
+
+button {
+    border: none;
+    text-decoration: none;
+    outline: none !important;
+}
