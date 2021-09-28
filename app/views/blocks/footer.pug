@@ -1,0 +1,61 @@
+- const footerTopTitle1 = "KÊNH THÔNG TIN TỪ CHÚNG TÔI :"
+- const footerTopTitle2 = "Đăng ký nhận email từ chúng tôi"
+- const mediaContact = ["fab fa-facebook-f", "fab fa-twitter", "fab fa-youtube", "fab fa-vimeo-v"]
+- const footerMidIcon = [{icon: "fas fa-mobile-alt", title: "Điện thoại : (84-4) 66.558.868"}, {icon: "far fa-envelope", title: "Email: info@dkt.com.vn"}]
+- const footerMidContentLeft = ["Green shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triển "]
+- const footerMidLeft = [{ title: "Thông tin khách hàng", content: [{ icon: "fas fa-angle-right", name: "Tài khoản của tôi", }, { icon: "fas fa-angle-right", name: "Sản phẩm yêu thích", }, { icon: "fas fa-angle-right", name: "Lịch sử mua hàng", }, { icon: "fas fa-angle-right", name: "Chính sách đổi trả", }, { icon: "fas fa-angle-right", name: "Góp ý ,khiếu nại", },] }, { title: "HỖ TRỢ DỊCH VỤ", content: [{ icon: "fas fa-angle-right", name: "Hệ thống cửa hàng", }, { icon: "fas fa-angle-right", name: "Hướng dẫn mua hàng", }, { icon: "fas fa-angle-right", name: "Hướng dẫn thanh toán", }, { icon: "fas fa-angle-right", name: "Tích điểm đổi quà", }, { icon: "fas fa-angle-right", name: "Câu hỏi thường gặp", },] }, { title: "Chính sách ưu đãi", content: [{ icon: "fas fa-angle-right", name: "Chính sách giao hàng", }, { icon: "fas fa-angle-right", name: "Chính sách đổi trả sản phẩm", }, { icon: "fas fa-angle-right", name: "Chính sách bảo hành", }, { icon: "fas fa-angle-right", name: "Giới thiệu sản phẩm mới", }, { icon: "fas fa-angle-right", name: "Chính sách trả góp", },] }, { title: "tin tức", content: [{ icon: "fas fa-angle-right", name: "Tin mới", }, { icon: "fas fa-angle-right", name: "Khuyến mại", }, { icon: "fas fa-angle-right", name: "Tuyển dụng", }, { icon: "fas fa-angle-right", name: "Download", }, { icon: "fas fa-angle-right", name: "Tags", },] },];
+- const footerBottomLine1 = ["Sitemap", "Danh mục sản phẩm", "Hợp tác", "Thông tin liên hệ", "Câu hỏi thường gặp"]
+- const footerBottomLine2 = ["fab fa-cc-visa", "fab fa-cc-paypal", "fab fa-cc-mastercard", "fab fa-cc-discover"]          
+- const footerCopyTitle = ["Thiết kế  bởi Bizweb"]
+- const footerCopyIcon = ["fas fa-copyright"]
+
+footer.footer
+    .footer-top
+        .container
+            .row.justify-content-between.align-items-center
+                .col-12.col-sm-12.col-md-5.col-lg-4
+                    .footer-top__title= footerTopTitle1
+                    each item in mediaContact
+                        a(href="#") 
+                            i(class= item)
+                .col-12.col-sm-12.col-md-3.col-lg-3
+                    .footer-top__title= footerTopTitle2
+                .col-12.col-sm-12.col-md-4.col-lg-5
+                    form.footer-top__form
+                        input(type="text")
+                        button.icon
+                            i.fab.fa-telegram-plane.icon-search
+    .footer-mid
+        .container
+            .row
+                .col-12.col-lg-4
+                    a(href="#").footer-mid__img
+                        img(src="../../images/logo-footer.png", alt="logo-footer")
+                    p= footerMidContentLeft
+                    each item in footerMidIcon
+                        a(href="tel:`#{item.title}`").footer-mid__media
+                            i(class= item.icon)
+                            span= item.title
+                each item in footerMidLeft
+                    .col-sm-12.col-md-auto.col-lg-auto
+                        h5.footer-mid__left= item.title
+                        each icon in item.content
+                            a(href="#").footer-mid__info
+                                i(class= icon.icon)
+                                span= icon.name
+    .footer-bottom
+        .container
+            .d-flex.justify-content-between
+                .list-item
+                    each item in footerBottomLine1
+                        a.item(href="#")= item
+                .list-item
+                    each item in footerBottomLine2
+                        a.item(href="#")
+                            i.item-icon(class= item)
+    .footer-copy
+        p.copy-item= footerCopyTitle
+            i(class= footerCopyIcon)
+            
+            
+            
