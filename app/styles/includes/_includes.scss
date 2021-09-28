@@ -1,0 +1,109 @@
+.item-status {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+
+    .status-new {
+        @include d-flex(center, center, column);
+        @include text($font-size-l, $text-white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $main-color;
+    }
+
+    .status-percent {
+        @include d-flex(center, center, column);
+        @include text($font-size-l, $text-white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $bg-red-discount;
+    }
+}
+
+.product__title {
+    @include d-flex(space-between, center, none);
+    position: relative;
+    border-bottom: 1px solid $border-product;
+    margin-bottom: 39px;
+    padding-bottom: 20px;
+    min-height: 52px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: -1px;
+        width: 22%;
+        height: 4%;
+        background: $main-color;
+
+        @include responsive(mobile) {
+            width: 55%;
+        }
+    }
+
+    h2 {
+        @include text($font-size-xl, $main-color);
+        font-weight: 700;
+    }
+
+    .product__icon {
+        @include d-flex(center, center, none);
+
+        a {
+            @include d-flex(center, center, none);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid $border-product;
+
+            &:first-child {
+                margin-right: 10px;
+            }
+
+            i {
+                @include text($font-size-xs, $text-main-fading);
+            }
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: $bg-black-overlay;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    .overlay-item {
+        @include d-flex(space-between, center, none);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        text-align: center;
+
+        .overlay-item__buys {
+            @include text($font-size-m, $text-white);
+            display: inline-block;
+            padding: 5% 0;
+            border-radius: 25px;
+            background: $main-color;
+            flex: 3;
+            margin-right: 5px;
+        }
+
+        .overlay-item__search {
+            padding: 5%;
+            border-radius: 50%;
+            background: $bg-white;
+
+            i {
+                @include text($font-size-m, $text-main);
+                @include d-flex(center, center, none);
+            }
+        }
+    }
+}
