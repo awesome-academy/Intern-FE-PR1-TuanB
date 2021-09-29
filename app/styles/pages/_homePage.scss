@@ -6,11 +6,11 @@
     margin-top: 60px;
 
     @include responsive(tablet) {
-        height: 553px;
+        height: 83vh;
     }
 
     @include responsive(laptop) {
-        height: 113vh;
+        height: 110vh;
     }
 }
 
@@ -22,4 +22,17 @@
 
 .banner-product {
     margin-top: 60px;
+}
+
+.new-product {
+    margin-top: 60px;
+    .product-normal {
+        .product__list--normal {
+            @include d-grid(repeat(4, 1fr), 52% 52%, 30px);
+
+            @include responsive(mobile) {
+                @include d-grid(1fr, 100%, 0);
+            }
+        }
+    }
 }
