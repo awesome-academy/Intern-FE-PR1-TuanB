@@ -1,0 +1,35 @@
+mixin products(title, listProduct, rating, status)
+    case status
+        when "big"
+            .product-big
+                .product__title
+                    h2= title
+                .product__list--big
+                    each item in listProduct
+                        .item-big.product-item
+                            .item__img
+                                a(href="#")
+                                    img(src= item.img, alt= item.name)
+                                .overlay
+                                    .overlay-item
+                                        a(href="").overlay-item__buys= buyButton
+                                        a(href="").overlay-item__search
+                                            i.fas.fa-search
+                            .item-status
+                                if item.status
+                                    .status-new= item.status
+                                if item.percent 
+                                    .status-percent= item.percent 
+                            .item__detail
+                                .item-name= item.name
+                                .item-rating 
+                                    each item in rating
+                                        i(class= item)
+                                .item-price
+                                    span.item-price__discount= item.discount
+                                    span.item-price__internal= item.internal
+        when "small"
+            p small
+        default
+            p default
+            
