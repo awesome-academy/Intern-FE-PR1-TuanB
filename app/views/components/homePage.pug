@@ -1,10 +1,16 @@
-- const buyButton = "Mua Ngay"
-- const featuredProductTitle = "Sản phẩm nổi bật"
-- const rating = ["fas fa-star", "fas fa-star", "fas fa-star", "fas fa-star", "fas fa-star-half-alt",]
-- const featuredProduct = [{ img: "../../images/product-1.png", name: "Cây chân chim", discount: "250.000 đ", internal: "250.000 đ", status: "NEW"}, { img: "../../images/product-2.png", name: "Cây Dạ Lam", discount: "500.000 đ", internal: "250.000 đ", percent: "-50%"}, { img: "../../images/product-3.png", name: "Cây Danh Dự", discount: "850.000 đ", internal: "250.000 đ", status: "NEW"}, { img: "../../images/product-4.png", name: "Cây cọ ta", discount: "150.000 đ", internal: "250.000 đ", }, { img: "../../images/product-5.png", name: "Cây dứa nhỏ", discount: "375.000 đ", internal: "250.000 đ", }, { img: "../../images/product-6.png", name: "Cây đa búp đỏ", discount: "1.000.000 đ", internal: "250.000 đ", percent: "-50%"}]
-
 section.featured-product
     .container
         .row
             .col-12
                 +products(featuredProductTitle, featuredProduct, rating, "big")
+section.buys-product
+    .container
+        .row
+            .col-12.col-md-4.col-lg-3
+                +products(buysProductTitle, buysProduct, rating, "small")
+            .col-12.col-md-8.col-lg-9
+                section.promotion-product
+                    +products(promotionProductTitle, promotionProduct, rating, "normal")
+section.banner-product
+    .container
+        img(src="../../images/banner.png", alt="banner")
