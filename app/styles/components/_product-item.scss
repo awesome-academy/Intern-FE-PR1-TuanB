@@ -7,6 +7,7 @@
             opacity: 1;
         }
     }
+
     .item__detail {
         @include d-flex(center, center, column);
         flex: 1;
@@ -19,6 +20,10 @@
             }
 
             @include responsive(tablet) {
+                font-size: $font-size-s;
+            }
+
+            @include responsive(laptop) {
                 font-size: $font-size-s;
             }
         }
@@ -37,6 +42,10 @@
                 @include responsive(tablet) {
                     font-size: $font-size-s;
                 }
+
+                @include responsive(laptop) {
+                    font-size: $font-size-s;
+                }
             }
         }
 
@@ -51,6 +60,10 @@
 
                 @include responsive(tablet) {
                     font-size: $font-size-m;
+                }
+
+                @include responsive(laptop) {
+                    font-size: $font-size-s;
                 }
             }
 

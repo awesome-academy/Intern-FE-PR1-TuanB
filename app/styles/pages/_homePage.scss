@@ -1,3 +1,25 @@
 .featured-product {
     margin-top: 60px;
 }
+
+.buys-product {
+    margin-top: 60px;
+
+    @include responsive(tablet) {
+        height: 553px;
+    }
+
+    @include responsive(laptop) {
+        height: 113vh;
+    }
+}
+
+.promotion-product {
+    @include responsive(mobile) {
+        margin-top: 60px;
+    }
+}
+
+.banner-product {
+    margin-top: 60px;
+}

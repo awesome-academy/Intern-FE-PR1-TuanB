@@ -29,7 +29,61 @@ mixin products(title, listProduct, rating, status)
                                     span.item-price__discount= item.discount
                                     span.item-price__internal= item.internal
         when "small"
-            p small
+            .product-small
+                .product__title
+                    h2= title
+                    .product__icon.d-md-none.d-lg-none
+                        a(href="")  
+                            i.fas.fa-chevron-left
+                        a(href="") 
+                            i.fas.fa-chevron-right
+                ul.product__list--small
+                    each item in listProduct
+                        li.item-small.product-item.card
+                            .row.no-gutters
+                                .col-5
+                                    .item-small__img
+                                        a(href="#")
+                                            img(src= item.img, alt= item.name)
+                                .col-7
+                                    .item__detail
+                                        .item-name= item.name
+                                        .item-rating 
+                                            each item in rating
+                                                i(class= item)
+                                        .item-price
+                                            span.item-price__discount= item.discount
         default
-            p default
+            .product-normal
+                .product__title 
+                    h2= title   
+                    .product__icon 
+                        a(href="")  
+                            i.fas.fa-chevron-left
+                        a(href="") 
+                            i.fas.fa-chevron-right
+                .product__list--normal
+                    each item in listProduct
+                        .item-normal.product-item
+                            .item__img
+                                a(href="#")
+                                    img(src= item.img, alt= item.name)
+                                .overlay
+                                    .overlay-item
+                                        a(href="").overlay-item__buys= buyButton
+                                        a(href="").overlay-item__search
+                                            i.fas.fa-search
+                            .item-status
+                                if item.status
+                                    .status-new= item.status
+                                if item.percent
+                                    .status-percent= item.percent 
+                            .item__detail
+                                .item-name= item.name
+                                .item-rating 
+                                    each item in rating
+                                        i(class= item)
+                                .item-price
+                                    span.item-price__discount= item.discount
+                                    span.item-price__internal= item.internal
             
