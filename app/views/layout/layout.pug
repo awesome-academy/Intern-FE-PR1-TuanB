@@ -1,8 +1,8 @@
-include ../data/productData.pug
 block mixins
 	include ../blocks/mixins
 block vars
 	-title = 'Green Shop'
+include ../data/data
 
 doctype html
 html(lang="en")
@@ -17,8 +17,10 @@ html(lang="en")
 		.wrapper
 			block header
 				include ../blocks/header
+
 			block homePage
-				include ../components/homePage
+			block listProductPage
+
 			block footer
 				include ../blocks/footer
 		block layer

@@ -1,0 +1,31 @@
+.news-product {
+    margin-top: 100px;
+
+    .news {
+        border: none;
+
+        &-content {
+            padding: 20px 0 0 0;
+            &__date {
+                @include text($font-size-m, $text-news-date);
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            &__title {
+                @include text($font-size-l, $main-color);
+                font-weight: 700;
+            }
+
+            &__desc {
+                @include text($font-size-m, $text-main-fading);
+            }
+
+            &__btn {
+                @include text($font-size-m, $main-color-fading);
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+    }
+}

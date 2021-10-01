@@ -1,0 +1,15 @@
+mixin productCategory(listCategory)
+    ul.product-category__list
+        each item in listCategory
+            li.product-category__item.py-3
+                a(href="#")
+                    i.fas.fa-chevron-right.mr-2
+                    span= item.name
+                    span.pl-1= item.quantity
+mixin color(listCategory)
+    ul.product-color__list
+        each item in listColor
+            li.product-color__item.py-3.w-50.d-flex
+                a(href="#")
+                    span.color.rounded-circle.mr-2.d-inline-block(style="background:" + item.color)
+                    span.color-name= item.name
