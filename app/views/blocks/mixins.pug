@@ -86,3 +86,19 @@ mixin products(title, listProduct, rating, status)
                                 .item-price
                                     span.item-price__discount= item.discount
                                     span.item-price__internal= item.internal
+
+mixin news(title, news, btn)
+    .row
+        .col-12
+            .product__title
+                h2= title
+    .row
+        each item in news
+            .col-12.col-sm-12.col-md-4.col-lg-4
+                .card.news
+                    img.card-img.news-img(src= item.img, alt= item.title)
+                    .card-body.news-content
+                        p.news-content__date= item.date
+                        h5.news-content__title.card-title= item.title
+                        p.news-content__desc.card-text= item.desc
+                        a.news-content__btn(href="#")= btn
