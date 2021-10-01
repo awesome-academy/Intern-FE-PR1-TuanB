@@ -39,4 +39,89 @@
             }
         }
     }
+
+    .list-product {
+        .nav-item {
+            .nav-link {
+                color: $text-main;
+            }
+
+            .active {
+                color: $text-white;
+                background: $bg-color-main;
+            }
+        }
+
+        .list-product__gird {
+            .product__title {
+                display: none;
+            }
+
+            .product__list--normal {
+                @include d-grid(repeat(3, 1fr), 33% 33%, 20px);
+
+                @include responsive(mobile) {
+                    @include d-grid(repeat(2, 1fr), repeat(3, 20%), 10px);
+
+                    .item-normal {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .list-product__list {
+            .list-product__content {
+                @include d-flex(center, flex-start, column);
+
+                .item-name {
+                    @include text($font-size-2xl, $bg-black);
+                }
+
+                .item-rating {
+                    @include text($font-size-s, $text-yellow);
+                }
+
+                .item-desc {
+                    @include text($font-size-m, $text-silver);
+                }
+
+                .item-price {
+                    @include text($font-size-xl, $bg-red-discount);
+                    font-weight: 700;
+                }
+
+                .item-control {
+                    @include d-flex(center, center, none);
+
+                    .item-buy {
+                        @include text($font-size-m, $text-white);
+                        background: $main-color;
+                        border-radius: 20px;
+                        transition: all 0.4s ease-in-out;
+                        &:hover {
+                            color: $main-color;
+                            background: $bg-white;
+                            border: 1px solid $main-color;
+                        }
+                    }
+
+                    .item-more {
+                        @include d-flex(center, center, none);
+                        @include text($font-size-m, $text-black);
+                        text-align: center;
+                        border: 1px solid $border-product;
+                        width: 30px;
+                        height: 30px;
+                        transition: all 0.4s ease-in-out;
+                        &:hover {
+                            color: $main-color;
+                            background: $bg-white;
+                            border: 1px solid $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

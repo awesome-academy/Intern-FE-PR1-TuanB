@@ -1,0 +1,15 @@
+.filter {
+    flex: 1;
+
+    @include responsive(mobile) {
+        flex: auto;
+    }
+
+    label {
+        @include text($font-size-l, $text-black);
+    }
+
+    select {
+        @include text($font-size-m, $text-main-fading);
+    }
+}

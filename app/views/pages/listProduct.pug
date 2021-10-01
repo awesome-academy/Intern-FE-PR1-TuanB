@@ -26,3 +26,21 @@ section.list-product
                                 .product__title
                                     h2= titleColor
                                 +color(listColor)
+            .col-12.col-md-8.col-lg-9
+                .list-product.mt-4
+                    img(src="../../images/sidebar.png", alt="side")
+                    ul#pills-tab.nav.nav-pills.mb-3.mt-4(role='tablist')
+                        li.nav-item
+                            a#pills-list-tab.nav-link.active(data-toggle='pill' href='#pills-list' role='tab' aria-controls='pills-list' aria-selected='true')
+                                i.fas.fa-th
+                        li.nav-item
+                            a#pills-grid-tab.nav-link(data-toggle='pill' href='#pills-grid' role='tab' aria-controls='pills-grid' aria-selected='false')
+                                i.fas.fa-th-list
+                        li.nav-item.d-flex.justify-content-end.filter
+                            +filterProduct(filterProduct)
+                    #pills-tab-content.tab-content
+                        #pills-list.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-list-tab')
+                            .list-product__gird
+                                +products("", productTypeGrid, rating, "normal")
+                        #pills-grid.tab-pane.fade(role='tabpanel' aria-labelledby='pills-grid-tab')
+                            .list-product__list
