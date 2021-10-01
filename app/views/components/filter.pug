@@ -1,0 +1,9 @@
+mixin filterProduct(filter)
+    form.form-inline
+        each item in filter
+            .d-flex.align-items-center.flex-wrap.input-box
+                label.mr-2.ml-2(for="productList-select")= item.title
+                select.form-control#productList-select
+                    each option in item.option
+                        option= option
+                    
