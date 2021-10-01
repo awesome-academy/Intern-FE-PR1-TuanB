@@ -1,0 +1,42 @@
+.list-product {
+    &__title {
+        margin-top: 20px;
+
+        .title-pre {
+            a {
+                @include text($font-size-m, $text-main-fading);
+            }
+        }
+        .title-current {
+            a {
+                @include text($font-size-m, $main-color);
+            }
+        }
+    }
+
+    .product__title {
+        margin-bottom: 10px;
+    }
+
+    .product-category__list {
+        .product-category__item {
+            cursor: pointer;
+            border-bottom: 1px solid $border-product;
+
+            a {
+                @include text($font-size-m, $text-main-fading);
+            }
+        }
+    }
+
+    .product-color__list {
+        @include d-flex($align: center);
+        flex-wrap: wrap;
+
+        .product-color__item {
+            a {
+                @include d-flex($align: center);
+            }
+        }
+    }
+}

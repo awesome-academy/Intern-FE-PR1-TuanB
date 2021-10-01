@@ -1,0 +1,7 @@
+.color {
+    width: 25px;
+    height: 25px;
+}
+.color-name {
+    @include text($font-size-m, $text-main-fading);
+}
