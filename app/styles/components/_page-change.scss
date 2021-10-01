@@ -1,0 +1,14 @@
+.list-product__title {
+    margin-top: 20px;
+
+    .title-pre {
+        a {
+            @include text($font-size-m, $text-main-fading);
+        }
+    }
+    .title-current {
+        a {
+            @include text($font-size-m, $main-color);
+        }
+    }
+}

@@ -4,13 +4,16 @@
         height: 32px;
         background-color: #202020;
         position: relative;
+
         @include responsive(mobile) {
             display: none;
         }
+
         &__clock {
             @include text($font-size-m, $text-main-fading);
             line-height: 32px;
         }
+
         &__media {
             @include text($font-size-m, $text-main-fading);
             text-align: center;
@@ -18,20 +21,25 @@
             width: 34px;
             line-height: 31px;
             border-left: 1px solid $border-color;
+
             &:last-child {
                 border-right: 1px solid $border-color;
             }
+
             i {
                 color: $bg-silver;
+
                 &:hover {
                     color: $text-white;
                 }
             }
         }
+
         &__time {
             @include text($font-size-m, $text-main-fading);
             margin: 0 32px 0 7px;
         }
+
         &__author {
             @include text($font-size-m, $text-main-fading);
             text-align: center;
@@ -39,39 +47,49 @@
             width: 100px;
             line-height: 32px;
             border-left: 1px solid $border-color;
+
             &:last-child {
                 border-right: 1px solid $border-color;
             }
+
             &:hover {
                 color: $text-white;
             }
+
             i {
                 margin-right: 5px;
             }
         }
     }
+
     &-main {
         background-image: url(../../images/bg-header.jpg);
         margin: 0 auto;
         width: 100%;
         height: 100%;
+
         &__logo {
             display: inline-block;
+
             img {
                 object-fit: contain;
                 height: 100%;
             }
         }
+
         .icon-phone {
             @include text($font-size-m, $text-silver);
             padding-left: 27px;
             margin-right: 5px;
         }
+
         &__phone {
             @include text($font-size-l, $text-silver);
             font-weight: 300;
         }
+
         &__input {
+            @include d-flex(space-around, center, none);
             width: 100%;
             height: 42px;
             border-radius: 21px;
@@ -79,7 +97,7 @@
             overflow: hidden;
             padding-left: 17px;
             margin-top: 12px;
-            @include d-flex(space-around, center, none);
+
             input {
                 @include text($font-size-l, $text-silver-fading);
                 height: 34px;
@@ -87,70 +105,115 @@
                 font-weight: 300;
                 background: $bg-white;
             }
+
             .search-icon {
+                @include text($font-size-l, $text-main-fading);
                 width: 34px;
                 height: 34px;
                 line-height: 34px;
                 display: inline-block;
                 text-align: center;
                 border-left: 1px solid $border-color-fading;
-                @include text($font-size-l, $text-main-fading);
             }
         }
+
         .header-cart {
             margin-top: 30px;
+
             &__icon {
                 @include text($font-size-3xl, $text-black);
             }
+
             &__quantity {
                 @include text($font-size-l, $text-black);
                 margin: 0 12px;
             }
         }
     }
+
     &-nav {
         background: $bg-color-main;
         height: 50px;
+
         @include responsive(mobile) {
             height: 45px;
         }
-        &__icon {
-            margin-right: 40px;
-            @include text($font-size-3xl, $text-white);
-            @include responsive(mobile) {
-                margin-right: 10px;
-                @include text($font-size-l, $text-white);
-                &:last-child {
-                    margin-right: 0px;
-                }
-            }
-            &:hover {
-                color: $text-white;
-            }
-        }
 
-        .navbar-nav {
-            .nav-item {
-                text-align: center;
-                line-height: 50px;
-                padding: 0 20px;
-                &:hover {
-                    background: $bg-main-hover-nav;
-                }
-                .nav-link {
+        .header-nav__list {
+            @include responsive(tablet) {
+                @include d-flex(space-between, center, none);
+            }
+
+            .header-nav__icon {
+                @include text($font-size-3xl, $text-white);
+                margin-right: 40px;
+
+                @include responsive(mobile) {
                     @include text($font-size-l, $text-white);
-                    padding: 0;
-                    display: inline-block;
-                    &:hover {
-                        color: $text-white;
+                    margin-right: 10px;
+                    flex: 1;
+
+                    &:last-child {
+                        margin-right: 0px;
                     }
-                    i {
-                        margin-left: 5px;
+                }
+
+                @include responsive(tablet) {
+                    @include text($font-size-xl, $text-white);
+                }
+
+                &:hover {
+                    color: $text-white;
+                }
+            }
+
+            .header-nav__item {
+                @include responsive(tablet) {
+                    flex: 1;
+                }
+
+                ul {
+                    @include responsive(tablet) {
+                        @include d-flex(center, center, row);
+                    }
+                }
+            }
+
+            .navbar-nav {
+                .nav-item {
+                    text-align: center;
+                    line-height: 50px;
+                    padding: 0 20px;
+
+                    &:hover {
+                        background: $bg-main-hover-nav;
+                    }
+
+                    .nav-link {
+                        @include text($font-size-l, $text-white);
+                        padding: 0;
+                        display: inline-block;
+
+                        @include responsive(mobile) {
+                            font-size: $font-size-s;
+                        }
+
+                        @include responsive(tablet) {
+                            font-size: $font-size-s;
+                        }
+
+                        &:hover {
+                            color: $text-white;
+                        }
+                        i {
+                            margin-left: 5px;
+                        }
                     }
                 }
             }
         }
     }
+
     &-slide {
         .carousel-item {
             img {

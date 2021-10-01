@@ -1,0 +1,17 @@
+mixin carouselSlide(images)
+    #carousel.carousel.slide.mt-20(data-ride='carousel')
+        .carousel-inner
+            each item, index in images
+                if index == 0
+                    .item.active
+                        img(src= item)
+                else
+                    .item
+                        img(src= item)
+    .clearfix
+        #thumbcarousel.carousel.slide(data-interval='false')
+            .carousel-inner
+                .item.active
+                    each item, index in images
+                        .thumb(data-target='#carousel' data-slide-to= index)
+                            img(src= item).pr-1

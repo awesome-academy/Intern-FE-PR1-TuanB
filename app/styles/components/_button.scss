@@ -1,0 +1,30 @@
+.item-control {
+    @include d-flex(flex-start, center, none);
+
+    .item-buy {
+        @include text($font-size-m, $text-white);
+        background: $main-color;
+        border-radius: 20px;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+            color: $main-color;
+            background: $bg-white;
+            border: 1px solid $main-color;
+        }
+    }
+
+    .item-more {
+        @include d-flex(center, center, none);
+        @include text($font-size-m, $text-black);
+        text-align: center;
+        border: 1px solid $border-product;
+        width: 30px;
+        height: 30px;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+            color: $main-color;
+            background: $bg-white;
+            border: 1px solid $main-color;
+        }
+    }
+}

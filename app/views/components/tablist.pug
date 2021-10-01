@@ -1,0 +1,19 @@
+mixin tablist(tab)
+    ul#myTab.nav.nav-tabs(role='tablist')
+        each item, index in tab
+            if index == 0
+                li.nav-item
+                    a#home-tab.nav-link.active.show.tab-item(data-toggle='tab' href='#home' role='tab' aria-controls='home' aria-selected='true')= item.title
+            else 
+                li.nav-item
+                    a#profile-tab.nav-link.tab-item(data-toggle='tab' href='#profile' role='tab' aria-controls='profile' aria-selected='false')= item.title
+    #myTabContent.tab-content
+        each item, index in tab
+            if index == 0
+                #home.tab-pane.fade.show.show.active.in(role='tabpanel' aria-labelledby='home-tab')
+                    each text in item.content 
+                        p.mt-5.ml-2= text
+            else
+                #profile.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab')
+                    each text in item.content 
+                        p.mt-5.ml-2= text

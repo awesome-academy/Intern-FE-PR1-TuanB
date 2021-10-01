@@ -22,12 +22,8 @@ mixin products(title, listProduct, rating, status)
                                     .status-percent= item.percent 
                             .item__detail
                                 .item-name= item.name
-                                .item-rating 
-                                    each item in rating
-                                        i(class= item)
-                                .item-price
-                                    span.item-price__discount= item.discount
-                                    span.item-price__internal= item.internal
+                                +rating(rating)
+                                +price(item.discount, item.internal)
         when "small"
             .product-small
                 .product__title
@@ -40,19 +36,16 @@ mixin products(title, listProduct, rating, status)
                 ul.product__list--small
                     each item in listProduct
                         li.item-small.product-item.card
-                            .row.no-gutters
-                                .col-5
+                            .row.mr-0.ml-0
+                                .col-5.pr-0.pl-0
                                     .item-small__img
                                         a(href="#")
                                             img(src= item.img, alt= item.name)
                                 .col-7
                                     .item__detail
                                         .item-name= item.name
-                                        .item-rating 
-                                            each item in rating
-                                                i(class= item)
-                                        .item-price
-                                            span.item-price__discount= item.discount
+                                        +rating(rating)
+                                        +price(item.discount, "")
         default
             .product-normal
                 .product__title 
@@ -80,12 +73,8 @@ mixin products(title, listProduct, rating, status)
                                     .status-percent= item.percent 
                             .item__detail
                                 .item-name= item.name
-                                .item-rating 
-                                    each item in rating
-                                        i(class= item)
-                                .item-price
-                                    span.item-price__discount= item.discount
-                                    span.item-price__internal= item.internal
+                                +rating(rating)
+                                +price(item.discount, item.internal)
 mixin productTypeList(listGird, rating)
     each item in listGird
         .row.flex-row.mb-5
@@ -95,15 +84,11 @@ mixin productTypeList(listGird, rating)
             .col-12.col-lg-8.d-flex.align-items-center
                 .list-product__content 
                     h2.item-name.mb-2= item.name
-                    .item-rating.mb-2 
-                        each item in rating
-                            i(class= item)
+                    .mb-2 
+                        +rating(rating)
                     .item-desc.mb-2= item.desc
-                    .item-price.mb-2= item.price
-                    .item-control.mb-2
-                        a.btn.item-buy.mr-3(href="#")= buyButton
-                        a.btn.item-more.rounded-circle.mr-3(href="#") 
-                            i.fas.fa-search
-                        a.btn.item-more.rounded-circle.mr-3(href="#") 
-                            i.fas.fa-heart
+                    .mb-2= item.price
+                        +price(item.internal, "")
+                    .mb-2
+                        +button(item.url, buyButton)
 

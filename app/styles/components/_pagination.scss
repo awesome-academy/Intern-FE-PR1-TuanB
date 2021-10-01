@@ -1,5 +1,5 @@
 .page-item {
-    a {
+    .page-link {
         @include text($font-size-m, $text-main-fading);
         &:hover {
             background: $bg-color-main;
