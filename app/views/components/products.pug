@@ -86,3 +86,24 @@ mixin products(title, listProduct, rating, status)
                                 .item-price
                                     span.item-price__discount= item.discount
                                     span.item-price__internal= item.internal
+mixin productTypeList(listGird, rating)
+    each item in listGird
+        .row.flex-row.mb-5
+            .col-12.col-lg-4
+                a(href="#")
+                    img(src= item.img, alt= item.name)
+            .col-12.col-lg-8.d-flex.align-items-center
+                .list-product__content 
+                    h2.item-name.mb-2= item.name
+                    .item-rating.mb-2 
+                        each item in rating
+                            i(class= item)
+                    .item-desc.mb-2= item.desc
+                    .item-price.mb-2= item.price
+                    .item-control.mb-2
+                        a.btn.item-buy.mr-3(href="#")= buyButton
+                        a.btn.item-more.rounded-circle.mr-3(href="#") 
+                            i.fas.fa-search
+                        a.btn.item-more.rounded-circle.mr-3(href="#") 
+                            i.fas.fa-heart
+
