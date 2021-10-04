@@ -1,0 +1,9 @@
+.page-item {
+    a {
+        @include text($font-size-m, $text-main-fading);
+        &:hover {
+            background: $bg-color-main;
+            color: $text-white;
+        }
+    }
+}

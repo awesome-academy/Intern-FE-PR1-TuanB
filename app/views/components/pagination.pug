@@ -1,0 +1,6 @@
+mixin pagination(pagination)
+    nav
+        ul.pagination
+            each item in pagination
+                li.page-item
+                    a.page-link(href='#')= item.title
