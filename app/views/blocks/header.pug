@@ -35,7 +35,7 @@ header.header
                         a(href="#").search-icon
                             i.fas.fa-search
                 .col-2.d-none.d-sm-block
-                    .header-cart
+                    a(href="cartPage.html").header-cart
                         each item in cart
                             i(class= item.icon).header-cart__icon
                             span.header-cart__quantity #{item.quantity} #{item.title}
