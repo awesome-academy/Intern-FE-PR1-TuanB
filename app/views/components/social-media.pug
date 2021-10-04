@@ -1,0 +1,13 @@
+mixin socialMedia(media)
+    .d-flex.justify-content-between.align-items-center.flex-wrap.mt-5
+        .d-flex.align-item-center.flex-wrap
+            .d-flex.align-items-center
+                each item in media
+                    a(href="#", style="background:" + item.color).d-flex.align-items-center.btn-item
+                        i(class= item.icon).mr-2
+                        span= item.name
+                    .count-page= item.quantity
+        .d-flex.align-items-center.mr-3
+            a(href="#", style="background: red").d-flex.align-items-center.btn-item
+                i.fas.fa-plus-square.mr-2
+                span share

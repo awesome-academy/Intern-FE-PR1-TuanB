@@ -1,0 +1,30 @@
+.detail-product__name {
+    @include text($font-size-2xl, $text-black);
+    font-weight: 400;
+}
+
+.detail-product__desc {
+    @include text($font-size-m, $text-silver);
+}
+
+.detail-product__line {
+    border-bottom: 1px solid $border-product;
+}
+
+.input-group {
+    button {
+        background: $bg-color-main;
+        color: $text-white;
+        width: 10%;
+
+        &:hover {
+            background: $bg-white;
+            color: $main-color;
+            border: 1px solid $main-color;
+        }
+    }
+
+    .quantity {
+        max-width: 10%;
+    }
+}

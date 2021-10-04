@@ -13,9 +13,17 @@
 @import "components/color-select";
 @import "components/filter";
 @import "components/pagination";
+@import "components/page-change";
+@import "components/rating";
+@import "components/price";
+@import "components/infoDerailProduct";
+@import "components/button";
+@import "components/social-media";
+@import "components/tablist";
 
 @import "includes/includes";
 
 @import "pages/homePage";
 @import "pages/news";
 @import "pages/listProduct";
+@import "pages/detailProduct";

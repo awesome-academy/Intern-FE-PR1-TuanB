@@ -1,0 +1,17 @@
+mixin infoDerailProduct(detail)
+    each item in detail
+        h2.detail-product__name.pb-4= item.name
+        .pb-4
+            +rating(rating)
+        .pb-4.detail-product__line
+            each price in item.price
+                +price(price.internal, item.discount)
+        p.detail-product__desc.detail-product__line.pb-4.pt-4= item.desc
+        .input-group.d-flex.pb-4.pt-4.detail-product__line
+            button(type="button").btn.btn-decrement.btn-outline-secondary.btn-minus
+                strong -
+            input(type="number", inputmode="decimal", value="1").form-control.quantity.mr-4.ml-4
+            button(type="button").btn.btn-increment.btn-outline-secondary.btn-plus
+                strong +
+        .pb-4.pt-4
+            +button("#", buyButton)

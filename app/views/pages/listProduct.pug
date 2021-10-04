@@ -2,11 +2,7 @@ section.list-product
     .container
         .row
             .col-12
-                .list-product__title
-                    span.title-pre 
-                        a(href="index.html") Home / 
-                    span.title-current
-                        a(href="#")= titlePages
+                +pageChange(titlePages, "listProductPage.html")
         .row
             .col-12.col-md-4.col-lg-3
                 .list-product__sidebar.mt-4
@@ -39,7 +35,7 @@ section.list-product
                         li.nav-item.d-flex.justify-content-end.filter
                             +filterProduct(filterProduct)
                     #pills-tab-content.tab-content
-                        #pills-list.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-list-tab')
+                        #pills-list.tab-pane.fade.show-in.active.in(role='tabpanel' aria-labelledby='pills-list-tab')
                             .list-product__gird
                                 +products("", productTypeGrid, rating, "normal")
                         #pills-grid.tab-pane.fade(role='tabpanel' aria-labelledby='pills-grid-tab')

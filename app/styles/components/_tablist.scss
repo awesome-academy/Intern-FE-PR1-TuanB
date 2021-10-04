@@ -1,0 +1,32 @@
+.tablist {
+    .nav-item {
+        .active {
+            color: $main-color !important;
+            border-top: 3px solid $border-black-fading !important;
+        }
+
+        .tab-item {
+            @include text($font-size-l, $text-black);
+            padding-left: 80px;
+            padding-right: 80px;
+
+            @include responsive(mobile) {
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 8px;
+            }
+
+            @include responsive(tablet) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .tab-content {
+        @include text($font-size-m, $text-silver);
+        @include responsive(mobile) {
+            font-size: 8px;
+        }
+    }
+}

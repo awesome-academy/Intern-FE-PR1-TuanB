@@ -1,0 +1,20 @@
+.item-rating {
+    margin: 5px 0;
+
+    i {
+        @include text($font-size-l, $text-yellow);
+        margin: 0 2px;
+
+        @include responsive(mobile) {
+            font-size: $font-size-s;
+        }
+
+        @include responsive(tablet) {
+            font-size: $font-size-s;
+        }
+
+        @include responsive(laptop) {
+            font-size: $font-size-s;
+        }
+    }
+}

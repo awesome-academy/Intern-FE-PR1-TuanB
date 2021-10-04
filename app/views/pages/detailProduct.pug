@@ -1,0 +1,15 @@
+section.detail-product
+    .container
+        .row
+            .col-12 
+                +pageChange(titleDetailPage, "detailProductPage.html")
+        .row.mt-5
+            .col-sm-6.pb-4
+                +carouselSlide(carouselImage)
+            .col-sm-6
+                +infoDerailProduct(detailProduct)
+                +socialMedia(socialMedia)
+        section.tablist.mt-5
+            +tablist(tablist)
+        section.suggest.mt-5
+            +products(sameProductTitle, sameProduct, rating, "normal")

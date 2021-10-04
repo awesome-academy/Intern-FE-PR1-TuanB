@@ -41,7 +41,7 @@ header.header
                             span.header-cart__quantity #{item.quantity} #{item.title}
     .header-nav
         .container.h-100
-            nav.navbar.navbar-expand-lg.navbar-light.p-0.h-100
+            nav.navbar.navbar-expand-lg.navbar-light.p-0.h-100.header-nav__list
                 a.header-nav__icon(href='#')
                     i.fas.fa-bars
                 .d-block.d-sm-none
@@ -49,7 +49,7 @@ header.header
                         i.fas.fa-search
                     a(href="#").header-nav__icon
                         i.fas.fa-cart-plus
-                #navbarSupportedContent.collapse.navbar-collapse.h-100
+                #navbarSupportedContent.collapse.navbar-collapse.h-100.header-nav__item
                     ul.navbar-nav.mr-auto.h-100
                         each item in navbar
                             if item.isActive

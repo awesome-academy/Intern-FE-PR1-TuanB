@@ -27,56 +27,5 @@
                 font-size: $font-size-s;
             }
         }
-
-        .item-rating {
-            margin: 5px 0;
-
-            i {
-                @include text($font-size-l, $text-yellow);
-                margin: 0 2px;
-
-                @include responsive(mobile) {
-                    font-size: $font-size-s;
-                }
-
-                @include responsive(tablet) {
-                    font-size: $font-size-s;
-                }
-
-                @include responsive(laptop) {
-                    font-size: $font-size-s;
-                }
-            }
-        }
-
-        .item-price {
-            &__discount {
-                @include text($font-size-2xl, $text-red);
-                font-weight: 700;
-
-                @include responsive(mobile) {
-                    font-size: $font-size-m;
-                }
-
-                @include responsive(tablet) {
-                    font-size: $font-size-m;
-                }
-
-                @include responsive(laptop) {
-                    font-size: $font-size-s;
-                }
-            }
-
-            &__internal {
-                @include text($font-size-l, $text-silver-fading);
-                text-decoration: line-through;
-                margin-left: 10px;
-                font-weight: 400;
-
-                @include responsive(mobile) {
-                    @include text($font-size-s, $text-silver-fading);
-                }
-            }
-        }
     }
 }
