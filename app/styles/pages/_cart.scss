@@ -1,0 +1,115 @@
+.cart {
+    .table-responsive {
+        @include responsive(table) {
+            display: table;
+        }
+    }
+    .cart-title {
+        background: $bg-color-main;
+
+        &__item {
+            @include text($font-size-l, $text-white);
+            text-align: center;
+            font-weight: 100;
+
+            @include responsive(mobile) {
+                font-size: $font-size-s;
+            }
+        }
+    }
+
+    .cart-img {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0;
+        }
+    }
+
+    .cart-content {
+        @include text($font-size-l, $text-main-fading);
+        text-align: center;
+        vertical-align: middle !important;
+
+        &__item {
+            @include text($font-size-l, $main-color);
+            display: inline-block;
+            width: 150px;
+        }
+
+        &__delete {
+            @include text($font-size-l, $text-main-fading);
+        }
+    }
+
+    .btn-control {
+        padding: 10px 20px;
+        border-radius: 20px;
+
+        @include responsive(mobile) {
+            padding: 5px 15px;
+        }
+
+        &:first-child {
+            @include text($font-size-m, $main-color);
+            border: 1px solid $main-color;
+            background: $bg-white;
+
+            @include responsive(mobile) {
+                font-size: $font-size-s;
+            }
+
+            &:hover {
+                color: $text-white;
+                background: $bg-color-main;
+            }
+        }
+
+        &:last-child {
+            @include text($font-size-m, $text-white);
+            background: $bg-color-main;
+            margin-left: 20px;
+
+            @include responsive(mobile) {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                background: $bg-main-hover-nav;
+            }
+        }
+    }
+
+    .cart-sum {
+        @include d-flex(space-between, center, none);
+
+        &:last-child {
+            background: $bg-color-main;
+
+            .cart-sum__item {
+                @include text($font-size-l, $text-white);
+                font-weight: 400;
+
+                @include responsive(mobile) {
+                    font-size: $font-size-m;
+                }
+            }
+        }
+
+        &__item {
+            @include text($font-size-l, $main-color);
+            padding: 40px;
+
+            @include responsive(mobile) {
+                padding: 10px;
+                font-size: $font-size-m;
+                justify-content: center !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+section.cart
+    .container
+        .mb-5
+            +pageChange(cartTitlePage, "cartPage.html")
+        .row
+            .col-12
+                table.table.w-100.d-block.d-lg-table.table-responsive
+                    thead.cart-title
+                        tr  
+                            each title in cartTitleItem
+                                th(scope='col').cart-title__item= title
+                    tbody
+                        each item in cartProduct
+                            tr
+                                td(scope='row').cart-img.cart-content 
+                                    img(src= item.image)
+                                td.cart-content 
+                                    a(href="detailProductPage.html").cart-content__item= item.name
+                                td.cart-content
+                                    .cart-content__item= item.price
+                                td.cart-content
+                                    input(type="number", value= item.quantity)
+                                td.cart-content
+                                    .cart-content__item= item.total
+                                td.cart-content
+                                    a(href="#").cart-content__delete
+                                        i.fas.fa-trash
+        .row.mt-5.mb-5
+            .col-12.d-flex.justify-content-end.align-items-center
+                each item in btnControlCart
+                    a(href="#").btn-control= item
+        .row.mt-5.mb-5
+            .col-12.d-flex.justify-content-end.align-items-center
+                ul.list-group.list-group-flush.card
+                    each sum in cartSum
+                        li.list-group-item.cart-sum
+                            span.cart-sum__item= sum.title
+                            span.cart-sum__item= sum.price
+        .row.mt-5.mb-5
+            .col-12.d-flex.justify-content-end.align-items-center
+                a(href="#").btn-control= cartPayment
