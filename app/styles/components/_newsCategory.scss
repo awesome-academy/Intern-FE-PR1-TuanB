@@ -1,0 +1,7 @@
+.news-sidebar {
+    @include d-flex(center, flex-start, none);
+
+    .news-sidebar__desc {
+        @include text($font-size-m, $text-main);
+    }
+}

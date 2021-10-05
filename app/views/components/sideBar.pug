@@ -13,3 +13,14 @@ mixin color(listCategory)
                 a(href="#")
                     span.color.rounded-circle.mr-2.d-inline-block(style="background:" + item.color)
                     span.color-name= item.name
+mixin newsCategory(news)
+    each item in news
+        .news-sidebar.my-5
+            img(src= item.img, alt= titleHighlightNews).news-sidebar__img.mr-4
+            .news-sidebar__desc= item.desc
+mixin blogTag(tags)
+    each tag in tags
+        if tag.isActive
+            a(href="#").tag-item.active-tags= tag.name
+        else
+            a(href="#").tag-item= tag.name
