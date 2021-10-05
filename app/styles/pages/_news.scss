@@ -1,0 +1,25 @@
+.news {
+    &-title {
+        @include text($font-size-2xl, $text-news-title);
+    }
+
+    &-time {
+        &__item {
+            @include text($font-size-m, $text-silver);
+            margin-right: 30px;
+
+            @include responsive(mobile) {
+                margin-right: 10px;
+            }
+
+            i {
+                @include text($font-size-m, $main-color);
+            }
+        }
+    }
+
+    &-desc {
+        @include text($font-size-m, $text-main-fading);
+        margin: 10px 0 50px 0;
+    }
+}

@@ -1,6 +1,11 @@
 .page-item {
     .page-link {
         @include text($font-size-m, $text-main-fading);
+
+        @include responsive(mobile) {
+            font-size: $font-size-s;
+        }
+
         &:hover {
             background: $bg-color-main;
             color: $text-white;
