@@ -1,0 +1,23 @@
+.register {
+    .input-comment {
+        border: 1px solid $border-color-fading;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .form-check {
+        input {
+            border: 1px solid $border-black-fading;
+        }
+    }
+
+    h2 {
+        @include text($font-size-2xl, $main-color);
+        font-weight: 700;
+    }
+
+    label {
+        @include text($font-size-m, $text-main-fading);
+        font-weight: 300;
+    }
+}

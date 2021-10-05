@@ -1,0 +1,24 @@
+section.register
+    .container
+        .row 
+            .col-12
+                +pageChange(titleRegister, "registerPage.html")
+            .col-12.mt-5
+                h2= titlePersonRegister
+        form.row.mt-5
+            each item in infoPersonRegister
+                .col-12.col-lg-6.d-flex.flex-column.mb-5
+                    label(for= item.id)= item.title
+                    input(type='text', id= item.id).input-comment
+            .form-check.d-flex
+                input#flexCheckDefault.form-check-input(type='checkbox')
+                label.form-check-label(for='flexCheckDefault')= titleCheckboxRegister
+        .row 
+            .col-12.mt-5
+                h2= titleAccRegister
+        form.row.mt-5
+            each item in infoAccRegister
+                .col-12.col-lg-6.d-flex.flex-column.mb-5
+                    label(for= item.id)= item.title
+                    input(type='password', id= item.id).input-comment
+            +btnControl([btnBack, btnRegister])
