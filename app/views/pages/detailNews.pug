@@ -24,15 +24,18 @@ section.list-product
                                 +blogTag(tagNews)
             .col-12.col-md-8.col-lg-9
                 section.news
-                    each item in newsdata
-                        a(href="detailNewsPages.html")
-                            h2.news-title.my-3= item.name
-                            .news-time.my-3
-                                each time in item.time
-                                    span.news-time__item
-                                        i(class= time.icon)
-                                        span.ml-3= time.content
-                            img(src= item.images, alt= item.name).my-3
-                            .news-desc= item.desc
-                .d-flex.justify-content-end.mt-5
-                    +pagination(pagination)
+                    each item in newsDataDetail
+                        h2.news-title.my-3= item.name
+                        .new-time.my-3
+                            each time in item.time
+                                span.new-time__item
+                                    i(class= time.icon)
+                                    span.ml-3= time.content
+                        img(src= item.images1, alt= item.name).my-3
+                        each desc in item.desc
+                            .news-desc.my-4= desc
+                        img(src= item.images2, alt= item.name).my-3
+                        each desc in item.desc
+                            .news-desc.my-4= desc
+        .row
+            +comment()
