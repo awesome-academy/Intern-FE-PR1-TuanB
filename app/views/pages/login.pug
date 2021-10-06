@@ -8,10 +8,7 @@ section.login
                 .login-left
                     h5.login-title= titlePersonRegister
                     .row.mr-5
-                        each item in inputLogin
-                            .col-12.mt-5
-                                label(for= item.id)= item.title
-                                input(type= item.id, id= item.id).input-comment
+                        +input(true, false, inputLogin, "")
                         .col-12.mt-5
                         .form-check.d-flex.mt-5.align-items-center
                             input#flexCheckDefault.form-check-input.mr-2(type='checkbox')
