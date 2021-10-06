@@ -27,8 +27,7 @@ section.cart
                                         i.fas.fa-trash
         .row.mt-5.mb-5
             .col-12.d-flex.justify-content-end.align-items-center
-                each item in btnControlCart
-                    a(href="#").btn-control= item
+                +btnControl(btnControlCart)
         .row.mt-5.mb-5
             .col-12.d-flex.justify-content-end.align-items-center
                 ul.list-group.list-group-flush.card
@@ -36,5 +35,5 @@ section.cart
                         li.list-group-item.cart-sum
                             span.cart-sum__item= sum.title
                             span.cart-sum__item= sum.price
-        .row.mt-5.mb-5
+        .row.mt-5.mb-5.d-flex.justify-content-end.align-items-center
             +btnControl([cartPayment])

@@ -1,0 +1,30 @@
+section.login
+    .container
+        .row
+            .col-12
+                +pageChange("Đăng nhập", "loginPage.html")
+        .row
+            .col-12.col-lg-6
+                .login-left
+                    h5.login-title= titlePersonRegister
+                    .row.mr-5
+                        each item in inputLogin
+                            .col-12.mt-5
+                                label(for= item.id)= item.title
+                                input(type= item.id, id= item.id).input-comment
+                        .col-12.mt-5
+                        .form-check.d-flex.mt-5.align-items-center
+                            input#flexCheckDefault.form-check-input.mr-2(type='checkbox')
+                            label.form-check-label(for='flexCheckDefault')= rememberAcc
+                        .forgot-password.mt-5
+                            a(href="#")= forgotPass
+                    .row.mt-5
+                        .col-12
+                            +btnControl([btnRegister])
+            .col-12.col-lg-6
+                .login-right
+                    h5.login-title= loginTitle
+                    p.login-desc= descLogin
+                .row.mt-5
+                    .col-12
+                        +btnControl([btnRegister])
