@@ -22,3 +22,17 @@ section.list-product
                                 .product__title
                                     h2= blogTag
                                 +blogTag(tagNews)
+            .col-12.col-md-8.col-lg-9
+                section.news
+                    each item in newsdata
+                        a(href="detailNewPages.html")
+                            h2.news-title.my-3= item.name
+                            .news-time.my-3
+                                each time in item.time
+                                    span.news-time__item
+                                        i(class= time.icon)
+                                        span.ml-3= time.content
+                            img(src= item.images, alt= item.name).my-3
+                            .news-desc= item.desc
+                .d-flex.justify-content-end.mt-5
+                    +pagination(pagination)
