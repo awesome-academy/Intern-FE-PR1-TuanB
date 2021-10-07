@@ -1,0 +1,17 @@
+mixin popup()
+    .popup(role='alert')
+        button.close(type='button' data-dismiss='alert' aria-label='Close').popup-close
+            span(aria-hidden='true') ×
+        .alert.fade.show.in(role='alert').popup-content.p-5
+            .row.align-items-center
+                .col-5.d-none.d-lg-block
+                    img(src="../../images/popup.png", alt="alert")
+                .col-12.col-lg-6
+                    .popup-content__top= popupTop
+                    .popup-content__title= popupTitle
+                    .mt-4
+                        +inputEmail("email", inputEmail)
+                    .popup-content__desc.mt-4= popupDesc
+                    .form-check.d-flex.align-items-center.mt-5
+                        input#flexCheckDefault.form-check-input(type='checkbox')
+                        label.form-check-label.ml-4(for='flexCheckDefault')= titleCheckboxRegister

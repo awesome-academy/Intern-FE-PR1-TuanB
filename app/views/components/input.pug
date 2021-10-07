@@ -3,9 +3,14 @@ mixin input(input, textarea, dataInput, dataTextarea)
         each item in dataInput
             .col-12.mt-5
                 label(for= item.id)= item.title
-                input(type= "text", id= item.id).input-comment
+                input(type= "text", id= item.id).input
     if textarea
         each item in dataTextarea
             .col-12.mt-5
                 label(for= item.id)= item.title 
                 textarea.w-100(id= item.id rows="4" cols="100" label = false required = false)
+mixin inputEmail(type ,placeholder)
+    form.input-email
+        input(type= type, placeholder= placeholder)
+        button.input-email__icon
+            i.fab.fa-telegram-plane.icon-search

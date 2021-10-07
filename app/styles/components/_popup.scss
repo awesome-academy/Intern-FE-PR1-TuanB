@@ -1,0 +1,53 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    @include responsive(mobile) {
+        width: 90%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -1000%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup-content {
+        background: $bg-popup;
+
+        .popup-content__top {
+            @include text($font-size-5xl, $text-news-title);
+        }
+
+        .popup-content__title {
+            @include text($font-size-4xl, $main-color);
+        }
+
+        .popup-content__desc {
+            @include text($font-size-l, $text-news-title);
+        }
+
+        .form-check {
+            @include text($font-size-l, $text-news-title);
+        }
+    }
+
+    .popup-close {
+        z-index: 999;
+        position: absolute;
+        right: 1%;
+        top: 1%;
+    }
+
+    .form-check {
+        padding-left: 0;
+
+        .form-check-input {
+            margin: 0;
+        }
+    }
+}
