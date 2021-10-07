@@ -28,3 +28,41 @@
         }
     }
 }
+
+.btn-control {
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    @include responsive(mobile) {
+        padding: 5px 15px;
+    }
+
+    &:first-child {
+        @include text($font-size-m, $main-color);
+        border: 1px solid $main-color;
+        background: $bg-white;
+
+        @include responsive(mobile) {
+            font-size: $font-size-s;
+        }
+
+        &:hover {
+            color: $text-white;
+            background: $bg-color-main;
+        }
+    }
+
+    &:last-child {
+        @include text($font-size-m, $text-white);
+        background: $bg-color-main;
+        margin-left: 20px;
+
+        @include responsive(mobile) {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background: $bg-main-hover-nav;
+        }
+    }
+}

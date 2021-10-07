@@ -1,0 +1,48 @@
+.media img {
+    width: 5%;
+
+    @include responsive(mobile) {
+        width: 10%;
+    }
+}
+
+.reply a {
+    text-decoration: none;
+}
+
+.pull-right.reply {
+    span {
+        @include text($font-size-m, $text-main);
+        text-decoration: underline;
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+
+.media-body {
+    h5 {
+        @include text($font-size-l, $text-black);
+    }
+
+    .comment-desc {
+        @include text($font-size-m, $text-main-fading);
+        max-width: 90%;
+    }
+
+    .comment-time {
+        @include text($font-size-m, $text-main-fading);
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+
+.input-comment {
+    border: 1px solid $border-black-fading;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-main {
+    width: 100%;
+    height: 100px;
+}

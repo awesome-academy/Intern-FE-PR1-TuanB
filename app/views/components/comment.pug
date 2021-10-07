@@ -1,0 +1,63 @@
+mixin comment()
+    .container.mb-5.mt-5
+        .row
+            .col-md-12
+                h3.text-left.mb-5 BÌNH LUẬN (3)
+                each item in comment
+                    if item.reply
+                        .row
+                            .col-md-12
+                                .media
+                                    img.mr-3.rounded-circle(alt= item.name src= item.avatar)
+                                    .media-body
+                                        .row
+                                            .col-8.d-flex.mb-2
+                                                h5= item.name
+                                            .col-4
+                                                .pull-right.reply
+                                                    a(href='#')
+                                                        span Trả lời 
+                                        p.comment-desc.mb-4= item.mess
+                                        p.comment-time.pb-5.mb-5= item.time
+                                        each rep in item.reply
+                                            .media.mt-4
+                                                img.rounded-circle.mr-3(alt= rep.name src= rep.avatar)
+                                                .media-body
+                                                    .row
+                                                        .col-8.d-flex
+                                                            h5= rep.name
+                                                        .col-4
+                                                            .pull-right.reply
+                                                                a(href='#')
+                                                                    span Trả lời 
+                                                    p.comment-desc.mb-4= rep.mess
+                                                    p.comment-time.pb-5.mb-5= rep.time
+                    else
+                        .row
+                            .col-md-12
+                                .media
+                                    img.mr-3.rounded-circle(alt= item.name src= item.avatar)
+                                    .media-body
+                                        .row
+                                            .col-8.d-flex.mb-2
+                                                h5= item.name
+                                            .col-4
+                                                .pull-right.reply
+                                                    a(href='#')
+                                                        span Trả lời 
+                                        p.comment-desc.mb-4= item.mess
+                                        p.comment-time.pb-5.mb-5= item.time
+        .row
+            .col-12 VIẾT BÌNH LUẬN :
+        .row.mt-4
+            .col-md-4.mb-3.d-flex
+                input(type="text", placeholder="Họ và tên").input-comment
+            .col-md-4.mb-3.d-flex
+                input(type="text", placeholder="Email").input-comment
+            .col-md-4.mb-3.d-flex
+                input(type="text", placeholder="Phone").input-comment
+        .row.mt-5
+            .col-12
+                textarea(rows="3").input-main
+        .row.mt-5.mb-5
+            +btnControl("Gửi")
