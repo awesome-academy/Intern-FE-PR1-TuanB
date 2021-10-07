@@ -9,6 +9,10 @@
             display: none;
         }
 
+        @include responsive(tablet) {
+            display: none;
+        }
+
         &__clock {
             @include text($font-size-m, $text-main-fading);
             line-height: 32px;
@@ -79,7 +83,6 @@
 
         .icon-phone {
             @include text($font-size-m, $text-silver);
-            padding-left: 27px;
             margin-right: 5px;
         }
 
@@ -139,6 +142,13 @@
             height: 45px;
         }
 
+        .header-nav__content {
+            padding: 0;
+            .navbar {
+                border: none;
+            }
+        }
+
         .header-nav__list {
             @include responsive(tablet) {
                 @include d-flex(space-between, center, none);
@@ -173,8 +183,37 @@
                 }
 
                 ul {
+                    @include responsive(mobile) {
+                        position: absolute;
+                        background: black;
+                        z-index: 999;
+                        left: -1000%;
+                        top: 44px;
+                        width: 100%;
+                        margin: 0;
+                        transition: all 0.5s;
+                    }
+
                     @include responsive(tablet) {
                         @include d-flex(center, center, row);
+                    }
+                }
+
+                .check-btn {
+                    cursor: pointer;
+                    display: none;
+
+                    @include responsive(mobile) {
+                        flex: 1;
+                        display: block;
+                    }
+                }
+
+                #check {
+                    display: none;
+
+                    &:checked ~ ul {
+                        left: 0;
                     }
                 }
             }

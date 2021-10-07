@@ -1,7 +1,7 @@
 mixin products(title, listProduct, rating, status)
     case status
         when "big"
-            .product-big
+            section.product-big
                 .product__title
                     h2= title
                 .product__list--big
@@ -25,7 +25,7 @@ mixin products(title, listProduct, rating, status)
                                 +rating(rating)
                                 +price(item.discount, item.internal)
         when "small"
-            .product-small
+            section.product-small
                 .product__title
                     h2= title
                     .product__icon.d-md-none.d-lg-none
@@ -47,7 +47,7 @@ mixin products(title, listProduct, rating, status)
                                         +rating(rating)
                                         +price(item.discount, "")
         default
-            .product-normal
+            section.product-normal
                 .product__title 
                     h2= title   
                     .product__icon 

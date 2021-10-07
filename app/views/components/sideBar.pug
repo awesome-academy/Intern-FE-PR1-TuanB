@@ -9,8 +9,8 @@ mixin productCategory(listCategory)
 mixin color(listCategory)
     ul.product-color__list
         each item in listColor
-            li.product-color__item.py-3.w-50.d-flex
-                a(href="#")
+            li.product-color__item.py-3.w-50
+                a(href="#").d-flex.align-items-center
                     span.color.rounded-circle.mr-2.d-inline-block(style="background:" + item.color)
                     span.color-name= item.name
 mixin newsCategory(news)

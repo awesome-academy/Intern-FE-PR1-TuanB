@@ -1,5 +1,5 @@
 header.header
-    .header-notify
+    section.header-notify
         .container
             .row
                 .col-9
@@ -13,36 +13,37 @@ header.header
                         a(href= item.url).header-notify__author
                             i(class= item.icon)
                             span= item.title
-    .header-main
+    section.header-main
         .container.h-100
-            .row.h-100.align-items-center
+            .row.h-100.align-items-center.mb-5
                 .col-12.col-lg-6.col-xl-6
                     a(href="index.html").header-main__logo
                         img(src="../../images/logo.png", alt="logo")
-                .col-4.d-none.d-sm-block
+                .col-sm-9.col-lg-4.d-none.d-sm-block
                     i.fas.fa-phone.icon-phone
                     span.header-main__phone= phoneNumber
                     form.header-main__input
                         input(type="text" placeholder="Tìm kiếm...")
                         a(href="#").search-icon
                             i.fas.fa-search
-                .col-2.d-none.d-sm-block
+                .col-sm-3.col-lg-2.d-none.d-sm-block
                     a(href="cartPage.html").header-cart
                         each item in cart
                             i(class= item.icon).header-cart__icon
                             span.header-cart__quantity #{item.quantity} #{item.title}
-    .header-nav
-        .container.h-100
-            nav.navbar.navbar-expand-lg.navbar-light.p-0.h-100.header-nav__list
-                a.header-nav__icon(href='#')
-                    i.fas.fa-bars
-                .d-block.d-sm-none
-                    a(href="#").header-nav__icon
-                        i.fas.fa-search
-                    a(href="#").header-nav__icon
-                        i.fas.fa-cart-plus
-                #navbarSupportedContent.collapse.navbar-collapse.h-100.header-nav__item
-                    ul.navbar-nav.mr-auto.h-100
+    section.header-nav
+        .container.h-100.header-nav__content
+            nav.navbar.navbar-expand-lg.p-0.h-100.header-nav__list
+                #navbarSupportedContent.navbar-collapse.h-100.header-nav__item.d-flex.justify-content-between
+                    input(type="checkbox" id="check")
+                    label.check-btn(for="check")
+                        i.fas.fa-bars.header-nav__icon
+                    .d-block.d-sm-none
+                        a(href="#").header-nav__icon
+                            i.fas.fa-search
+                        a(href="cartPage.html").header-nav__icon
+                            i.fas.fa-cart-plus
+                    ul.navbar-nav.mr-auto
                         each item in navbar
                             if item.isActive
                                 li.nav-item.active-nav
@@ -52,8 +53,7 @@ header.header
                                 li.nav-item
                                     a.nav-link(href= item.url)= item.title
                                         i(class = item.icon)
-            
-    .header-slide
+    section.header-slide
         #slides.carousel.slide(data-ride='carousel')
             ul.carousel-indicators
                 li.active(data-target='#slides' data-slide-to='0')
@@ -67,4 +67,3 @@ header.header
                     else
                         .carousel-item
                             img.w-100(src= item.img, alt= item.alt)
-
