@@ -10,7 +10,7 @@ header.header
                             i(class= item)
                 .col-3.d-flex.justify-content-end.align-items-center
                     each item in author
-                        a(href="#").header-notify__author
+                        a(href= item.url).header-notify__author
                             i(class= item.icon)
                             span= item.title
     .header-main
