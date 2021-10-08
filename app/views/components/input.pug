@@ -1,0 +1,11 @@
+mixin input(input, textarea, dataInput, dataTextarea)
+    if input
+        each item in dataInput
+            .col-12.mt-5
+                label(for= item.id)= item.title
+                input(type= "text", id= item.id).input-comment
+    if textarea
+        each item in dataTextarea
+            .col-12.mt-5
+                label(for= item.id)= item.title 
+                textarea.w-100(id= item.id rows="4" cols="100" label = false required = false)

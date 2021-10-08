@@ -1,0 +1,10 @@
+.contact-info {
+    &__title {
+        @include text($font-size-2xl, $main-color);
+        font-weight: 700;
+    }
+
+    .info__desc {
+        @include text($font-size-m, $text-white-fading);
+    }
+}

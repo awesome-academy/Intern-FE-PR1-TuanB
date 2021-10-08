@@ -1,0 +1,8 @@
+label {
+    @include text($font-size-m, $text-main-fading);
+    font-weight: 300;
+}
+
+textarea {
+    border: 1px solid $border-product;
+}
