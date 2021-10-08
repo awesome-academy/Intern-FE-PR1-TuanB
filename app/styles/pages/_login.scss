@@ -1,0 +1,36 @@
+.login {
+    &-title {
+        @include text($font-size-2xl, $main-color);
+        font-weight: 700;
+        margin: 80px 0 30px 0;
+    }
+    &-left {
+        label {
+            @include text($font-size-m, $text-main-fading);
+            font-weight: 300;
+        }
+
+        .input-comment {
+            border: 1px solid $border-color-fading;
+        }
+
+        .form-check-input {
+            all: revert;
+        }
+
+        .forgot-password {
+            text-decoration: underline;
+            margin-left: 10px;
+            a {
+                @include text($font-size-m, $text-main-fading);
+                font-style: italic;
+            }
+        }
+    }
+    &-right {
+        .login-desc {
+            @include text($font-size-m, $text-main-fading);
+            font-weight: 400;
+        }
+    }
+}

@@ -6,6 +6,5 @@ mixin button(url, name)
         a.btn.item-more.rounded-circle.mr-3(href="#") 
             i.fas.fa-heart
 mixin btnControl(name)
-    .col-12.d-flex.justify-content-end.align-items-center
-        each item in name
-            a(href="#").btn-control= item
+    each item in name
+        a(href="#").btn-control= item

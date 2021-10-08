@@ -21,4 +21,6 @@ section.register
                 .col-12.col-lg-6.d-flex.flex-column.mb-5
                     label(for= item.id)= item.title
                     input(type='password', id= item.id).input-comment
-            +btnControl([btnBack, btnRegister])
+        .row
+            .col-12
+                +btnControl([btnBack, btnRegister])
