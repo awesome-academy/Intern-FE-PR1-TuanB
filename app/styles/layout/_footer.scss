@@ -31,28 +31,6 @@
                 @include text($font-size-4xl, $text-white);
             }
         }
-
-        &__form {
-            input {
-                background: white;
-                width: 80%;
-                height: 45px;
-            }
-
-            .icon {
-                position: absolute;
-                width: 20%;
-                height: 45px;
-                line-height: 45px;
-                text-align: center;
-                background: $bg-main-hover-item;
-
-                i {
-                    padding: 0;
-                    color: $bg-white;
-                }
-            }
-        }
     }
 
     &-mid {
