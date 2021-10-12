@@ -26,5 +26,9 @@
 
     .quantity {
         max-width: 10%;
+
+        @include responsive(mobile) {
+            max-width: 30%;
+        }
     }
 }
